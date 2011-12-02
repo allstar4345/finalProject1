@@ -1,4 +1,6 @@
 FinalProject::Application.routes.draw do
+  get "pages/help"
+
   get "pages/home"
 
   get "pages/contact"
