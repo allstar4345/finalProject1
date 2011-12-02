@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def help
+  def about
   end
 
 end
