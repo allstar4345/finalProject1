@@ -1,4 +1,6 @@
 FinalProject::Application.routes.draw do
+  get "sessions/new"
+
   get "pages/about"
 
   get "pages/help"
