@@ -1,4 +1,10 @@
 FinalProject::Application.routes.draw do
+  get "users/index"
+
+  get "users/new"
+
+  get "users/show"
+
   get "sessions/new"
 
   get "pages/about"
