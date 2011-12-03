@@ -3,6 +3,9 @@
 
 <% if signed_in? %>
 <h1 class="micropost">What's up?</h1>
+<%= render 'shared/micropost_form' %>
+
+<%= render 'shared/stats.html.erb'%>
 <% else %>
 <%= link_to "Sign up now!", new_user_path, :class => "signup_button round" %>
 <% end %>
