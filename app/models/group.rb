@@ -1,6 +1,6 @@
 class Group < ActiveRecord::Base
   
-  atttr_accessible :leader_id
+  attr_accessible :leader_id
   
   belongs_to :follower, :class_name => "User"
   belongs_to :leader, :class_name => "User"
