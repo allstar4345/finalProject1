@@ -2,20 +2,25 @@
 <html>
 <head>
   <title>FinalProject</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
+  <title><%= @title %></title>
+<%= render 'layouts/stylesheets' %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+   </head>
+   <body>
+<div class="container">
+<%= render 'layouts/header' %>
 <section class="round">
-  <% flash.each do |key, value| %>
-     <div class="flash <%= key %>">
-         <%= value %>
-     </div>
-  <% end %>
-  <%= yield %>
+<% flash.each do |key, value| %>
+<div class="flash <%= key %>">
+<%= value %>
+</div>
+<% end %>
+<%= yield %>
 </section>
-
-</body>
+           <%= render 'layouts/footer' %>
+        </div>
+   </body>
 </html>
+
+
