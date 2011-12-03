@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def new # responds to get /users/new by rendering new.html.erb
     @title = "Sign up"
-    @microposts = @user.microposts.paginate(:page => params[:page] )
     @user = User.find(params[:id])
   end
   
@@ -17,6 +16,7 @@ class UsersController < ApplicationController
   
   def show # responds to get /user/i by rendering show.html.erb
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(:page => params[:page] )
     @title = @user.name
   end
   
