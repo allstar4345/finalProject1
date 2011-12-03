@@ -59,3 +59,5 @@ REQUESTING PAGE: GET http://www.example.com/users/1 with {} and HTTP headers {"H
 REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/users/1"}
 REQUESTING PAGE: GET /users with {} and HTTP headers {}
 REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+REQUESTING PAGE: GET /users with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
