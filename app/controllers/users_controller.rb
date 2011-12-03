@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def new # responds to get /users/new by rendering new.html.erb
     @title = "Sign up"
-    @user = User.new
+    @microposts = @user.microposts.paginate(:page => params[:page] )
+    @user = User.find(params[:id])
   end
   
   def create # responds to post /users and redirects to /user/i if successful or new.html.erb if not
