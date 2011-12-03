@@ -1,7 +1,13 @@
 FinalProject::Application.routes.draw do
   resources :users
+  member do
+      get :following, :leaders
+    end
+  end
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :microposts, :only => [:create, :destroy]
+  resources :microposts, :only =>[:create, :destroy]
+
+
   
   root :to => 'pages#home'
   match '/contact', :to => 'pages#contact'

@@ -48,4 +48,50 @@ describe User do
     upperCaseEmail = @attr[:email].upcase
     user3 = User.new(@attr.merge(:email => upperCaseEmail))
   end
+  
+  describe "micropost associations" do
+    before(:each) do
+      @user = User.create!(@attr)
+      @mic1 = Factory(:micropost, :user=>@user, :created_at => 1.day.ago)
+      @mic2 = Factory(:micropost, :user=>@user, :created_at => 1.hour.ago)
+    end
+    
+    it "should have microposts" do
+      @user.should respond_to(:microposts)
+    end
+    
+    it "should have microposts ordered descending by creation data" do
+      @user.microposts.should == [@mic2, @mic1]
+    end
+  end
+  
+  describe "users relationship to groups" do
+    before(:each) do
+      fattr = {:name => "Jane Smith", :email => "jsmith@example.com"}
+      @user = User.create!(fattr)
+      @leader = Factory(:user)
+    end
+    
+    it "should have groups" do
+      @user.should respond_to(:groups)
+    end
+    
+    it "should have a following? method" do
+      @user.should respond_to(:following?)
+    end
+    
+    it "should have a follow! method" do
+      @user.should respond_to(:follow!)
+    end
+    
+    it "should follow another user" do
+      @user.follow!(@leader)
+    end
+    
+    it "should unfollow a user" do
+      @user.follow!(@leader)
+      @user.unfollow!(@leader)
+      @user.should_not be_following(@leader)
+    end
+  end
 end
