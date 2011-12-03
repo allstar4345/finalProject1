@@ -1,6 +1,6 @@
 FinalProject::Application.routes.draw do
-  resources :users
-  member do
+  resources :users do
+    member do
       get :following, :leaders
     end
   end
