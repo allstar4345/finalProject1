@@ -1,6 +1,6 @@
 module ApplicationHelper
   
   def logo
-    image_tag("logo.png", :alt => "Final Project", :class => "round")
+    image_tag("tree.gif", :alt => "Final Project", :class => "round")
   end
 end
