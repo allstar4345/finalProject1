@@ -1,5 +1,9 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<% if signed_in? %>
+<h1 class="micropost">What's up?</h1>
+We're going to display some posts and a comment form here eventually.
+<% else %>
 <%= link_to "Sign up now!", new_user_path, :class => "signup_button round" %>
-
+<% end %>
