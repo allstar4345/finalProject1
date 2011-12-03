@@ -1,0 +1,10 @@
+<%= form_for current_user.groups.build(:leader_id => @user.id) do |f| %>
+  <div>
+   <% f.hidden_field :leader_id %>
+   <div class="actions">
+   <%= f.submit "Follow" %>
+   </div>
+  </div>
+
+<% end %>
+

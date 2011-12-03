@@ -1,0 +1,9 @@
+<%= form_for current_user.groups.find_by_leader_id(@user),
+                           :html => {:method => :delete} do |f| %>
+ 
+   <div class="actions">
+   <%= f.submit "Unfollow" %>
+   </div>
+
+
+<% end %>

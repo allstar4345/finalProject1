@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   
   def show # responds to get /user/i by rendering show.html.erb
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(:page => params[:page] )
     @title = @user.name
   end
   
@@ -25,3 +26,4 @@ class UsersController < ApplicationController
   end
 
 end
+

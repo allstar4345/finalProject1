@@ -1,19 +1,19 @@
 FinalProject::Application.routes.draw do
-  get "users/index"
-
-  get "users/new"
-
-  get "users/show"
-
-  get "sessions/new"
-
-  get "pages/about"
-
-  get "pages/help"
-
-  get "pages/home"
-
-  get "pages/contact"
+  resources :users do
+    member do
+      get :following, :leaders
+    end
+  end
+  resources :sessions, :only => [:new, :create, :destroy]
+  resources :microposts, :only => [:create, :destroy]
+  
+  root :to => 'pages#home'
+  match '/contact', :to => 'pages#contact'
+  match '/about', :to => 'pages#about'
+  match '/help', :to => 'pages#help'
+  match '/signup', :to => 'users#new'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

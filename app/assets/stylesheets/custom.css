@@ -3,7 +3,7 @@ width: 710px;
 }
 
 body {
-background: #cff;
+background: #4e8975;
 }
 
 header {
@@ -12,14 +12,19 @@ padding-top: 20px;
 
 header img {
 padding: 1em;
-background: #fff;
+background: #ECD672;
 }
 
 section {
 margin-top: 1em;
+<<<<<<< HEAD
 font-size: 120%;
+=======
+font-size; 120%;
+color:#6299C5
+>>>>>>> following-users
 padding: 20px;
-background: #fff;
+background: #ECD672;
 }
 
 a {
