@@ -17,7 +17,7 @@ background: #ECD672;
 
 section {
 margin-top: 1em;
-<<<<<<< HEAD
+//<<<<<<< HEAD
 font-size: 120%;
 =======
 font-size; 120%;
@@ -42,7 +42,7 @@ color: #069;
 }
 
 nav {
-float: right;
+float: left;
 background: white;
 padding: 0 0.7em;
 white-space: nowrap;
