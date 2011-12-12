@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   
   def destroy
       @user.destroy
+      sign_out @user
       redirect_to user_path
       flash[:success] = "User destroyed."
     
