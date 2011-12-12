@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
                     :format => { :with => email_regexp},
                     :uniqueness => {:case_sensitive => false}
                     
+                 
+                 
+  
+                    
       
     def following?(leader)
     groups.find_by_leader_id(leader)

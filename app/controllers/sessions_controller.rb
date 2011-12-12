@@ -5,8 +5,12 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:session][:email])
-    pw = User.find_by_password(params[:session][:password])
-    if (user.nil || pw.nil)?
+    if (@user.password != [:password]) {
+      flash.now[:error] = "Invalid email or password."
+      @title = "Sign in"
+      render 'new'
+    }
+    if user.nil ?
       flash.now[:error] = "Invalid email or password."
       @title = "Sign in"
       render 'new'
