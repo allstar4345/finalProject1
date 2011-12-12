@@ -1,8 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Family Connect</h1>
+<p>Family Connect is an online resource for families.  The whole family can stay connected online in one place.  We put families and privacy first. You decide who can join and participate in your family group.</p>
 
 <% if signed_in? %>
-<h1 class="micropost">What's up?</h1>
+<h1 class="micropost">Welcome to Family Connect!!!</h1>
 
 <% else %>
 <%= link_to "Sign up now!", new_user_path, :class => "signup_button round" %>
