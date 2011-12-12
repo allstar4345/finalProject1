@@ -1,4 +1,4 @@
-FinalProject::Application.routes.draw do
+finalProject1::Application.routes.draw do
   resources :users do
     member do
       get :following, :leaders
