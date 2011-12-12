@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     #  flash[:success] = "User destroyed."
    # end
     
-    redirect_to users_path
-  end
+    #redirect_to users_path
+  #end
 end
 
