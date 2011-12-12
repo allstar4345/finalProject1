@@ -52,4 +52,10 @@ class User < ActiveRecord::Base
   def unfollow!(leader)
     groups.find_by_leader_id(leader).destroy
   end
+  
+  class << self
+    def authenticate(email, submitted_password)
+      user = find_by_email(email)
+      (user && user.has_password?(submitted_password)) ? user : nil
+    end
 end
