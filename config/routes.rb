@@ -8,7 +8,7 @@ FinalProject::Application.routes.draw do
   resources :microposts, :only => [:create, :destroy]
   
   root :to => 'pages#contact'
-  match '/contact', :to => 'pages#contact'
+  match '/contact', :to => 'pages#home'
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
   match '/signup', :to => 'users#new'
