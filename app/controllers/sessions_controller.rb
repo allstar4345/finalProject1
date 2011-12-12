@@ -4,12 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_email(params[:session][:email])
-    if (@user.password != [:password]) {
-      flash.now[:error] = "Invalid email or password."
-      @title = "Sign in"
-      render 'new'
-    }
+    user = User.authenticate(params[:session][:email], params[:session][:password])
+    
     if user.nil ?
       flash.now[:error] = "Invalid email or password."
       @title = "Sign in"

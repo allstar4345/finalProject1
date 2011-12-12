@@ -24,6 +24,14 @@ class UsersController < ApplicationController
     @title = "Current users"
     @users = User.all
   end
-
+  
+  def destroy
+    @user = User.find(params[:id])
+      @user.destroy
+      flash[:success] = "User destroyed."
+    end
+    
+    redirect_to users_path
+  end
 end
 
