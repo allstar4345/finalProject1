@@ -40,6 +40,6 @@ ActiveRecord::Schema.define(:version => 20111203004051) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], ["password"],  :name => "index_users_on_email", :unique => true
+  add_index "users", ["email", "password"],  :name => "index_users_on_email", :unique => true
 
 end
