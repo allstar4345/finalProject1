@@ -51,11 +51,10 @@ describe "LayoutLinks" do
 
   describe "when signed in" do
     before (:each) do
-      tempUser = {:name => "John Doe", :email => "jdoe@example.com"}
-      @user = User.create!(tempUser)
+      @user = Factory(:user)
       visit signin_path
-      fill_in :email, :with => "jdoe@example.com"
-      fill_in :password, :with => "foobar"
+      fill_in :email, :with => @user.email
+      fill_in :password, :with => @user.password
       click_button
     end
 
