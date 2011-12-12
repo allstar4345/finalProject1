@@ -1,7 +1,7 @@
 module SessionsHelper
   
 def sign_in(user)
-    cookies.permanent.signed[:remember_token] = [user.id, user.password]
+    cookies.permanent.signed[:remember_token] = user.email
     self.current_user = user
   end
   
@@ -43,7 +43,8 @@ def sign_in(user)
   private
 
     def user_from_remember_token
-      User.authenticate_with_password(*remember_token)
+      userEmail = remember_token
+      User.find_by_email(userEmail)
     end
     
     def remember_token
