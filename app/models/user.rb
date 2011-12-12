@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
                     
   validates :password, :presence => true,
                         :confirmation => true,
-                        :length => { :within => 6..40 }   
+                        :length => { :within => 4..40 }   
                         
                         
                                       
