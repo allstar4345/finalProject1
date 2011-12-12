@@ -1,7 +1,7 @@
 module SessionsHelper
   
 def sign_in(user)
-    cookies.permanent.signed[:remember_token] = user.email
+    cookies.permanent[:remember_token] = user.email
     self.current_user = user
   end
   
@@ -35,11 +35,6 @@ def sign_in(user)
     redirect_to signin_path, :notice => "Please sign in to access this page."
   end
   
-  def redirect_back_or(default)
-    redirect_to(session[:return_to] || default)
-    clear_return_to
-  end
-  
   private
 
     def user_from_remember_token
@@ -48,7 +43,7 @@ def sign_in(user)
     end
     
     def remember_token
-      cookies.signed[:remember_token] || [nil, nil]
+      cookies[:remember_token] || nil
     end
 
 end
