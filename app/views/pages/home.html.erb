@@ -1,9 +1,25 @@
+% if signed_in? %>
+
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="micropost">What's up?</h1>
+        <%= render 'shared/micropost_form' %>
+        <%= render 'shared/feed' %>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+        <%= render 'shared/stats' %>
+      </td>
+    </tr>
+  </table>
+
+<% else %>
+
 <h1>Family Connect</h1>
 <p>Family Connect is an online resource for families.  The whole family can stay connected online in one place.  We put families and privacy first. You decide who can join and participate in your family group.</p>
 
-<% if signed_in? %>
-<h1 class="micropost">Welcome to Family Connect!!!</h1>
 
-<% else %>
+
 <%= link_to "Sign up now!", new_user_path, :class => "signup_button round" %>
 <% end %>

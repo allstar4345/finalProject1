@@ -7,3 +7,4 @@ class AddEmailUniquenessIndex < ActiveRecord::Migration
     remove_index :users, :email
   end
 end
+

@@ -1,10 +1,6 @@
-<%= form_for current_user.groups.build(:leader_id => @user.id) do |f| %>
-  <div>
-   <% f.hidden_field :leader_id %>
-   <div class="actions">
-   <%= f.submit "Follow" %>
-   </div>
-  </div>
-
+<%= form_for(current_user.relationships.
+                          build(:followed_id => @user.id),
+                          :remote => true) do |f| %>
+  <div><%= f.hidden_field :followed_id %></div>
+  <div class="actions"><%= f.submit "Follow" %></div>
 <% end %>
-

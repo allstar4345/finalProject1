@@ -1,19 +1,10 @@
 <h1>Current users</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-  </tr>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
-    <td><%= user.email %></td>
-  </tr>
-<% end %>
-</table>
+<%= will_paginate %>
 
-<br />
+<ul class="users">
+  <%= render @users %>
+</ul>
 
-<%= link_to 'Home', root_path %>
+<%= will_paginate %>

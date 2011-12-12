@@ -7,4 +7,3 @@ class AddPasswordToUsers < ActiveRecord::Migration
     remove_column :users, :encrypted_password
   end
 end
-
