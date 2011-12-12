@@ -1,4 +1,4 @@
-== Schema Information
+#== Schema Information
 # Schema version: 20100829210229
 #
 # Table name: microposts
