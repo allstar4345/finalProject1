@@ -14,7 +14,7 @@ group :production do
 
     group :development, :test do
        gem 'sqlite3', '1.3.4', :require => 'sqlite3'
-       gem 'cucumber', '~> 1.1.0'
+       gem 'cucumber', '~> 1.1.4'
 	  end
 
 
